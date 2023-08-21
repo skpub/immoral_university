@@ -14,10 +14,19 @@ export default function Index() {
       </h1>
       <div css={css`
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        /* align-items: center; */
+        align-items: stretch;
+        @media screen and (max-width: 767px) {
+          flex-direction: column-reverse;
+        }
       `}>
         <div css={css`
           margin: 20px;
+          flex: 0 0 50%;
+          @media screen and (min-width: 1280px) {
+            flex: 0 0 70%;
+          }
         `}>
           <p>
             新入生の皆さん、インモラル大学へようこそ(150dB)。大学全入時代突入と言われて久しいですが、最近になって
@@ -29,7 +38,7 @@ export default function Index() {
             「成果主義に陥って、基礎研究を蔑ろにして、短期的な利益ばかりを追い求めていないか。」
           </p>
           <p>
-            といった非難が各所から出ております。社会の情勢に応じて変化していくことを大学教育に求めるのは正当なことですが、一方で教育機関であるばかりでなく研究機関でもある大学の側面を鑑みれば、こうした状況に手をこまねいてはいられません。
+            といった非難が各所から出ております。社会の情勢に応じた変化を大学教育に求めるのは正当なことですが、一方で教育機関であるばかりでなく研究機関でもある大学の側面を鑑みれば、こうした状況に手をこまねいてはいられません。
           </p>
           <p>
             「利益を齎すのとは逆に、寧ろ莫大な不利益を社会に齎す大学があってもよいのではないか。」
@@ -49,6 +58,10 @@ export default function Index() {
           </b>
         </div>
         <div css={css`
+          margin-top: 30px;
+          width: 100%;
+          display: flex;
+          flex-flow: column;
           h3, h4 {
             margin: 0;
           }
@@ -57,6 +70,7 @@ export default function Index() {
           }
         `}>
           <img src={imface} alt="" css={css`
+            max-width: 100%;
             border-radius: 2%;
           `}/>
           <div>
